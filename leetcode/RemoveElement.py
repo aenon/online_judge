@@ -9,6 +9,8 @@
 
 # Don't forget to return 0 if A == [].
 
+# GJH's method
+
 class Solution:
     # @param    A       a list of integers
     # @param    elem    an integer, value need to be removed
@@ -27,3 +29,22 @@ class Solution:
             l += 1
             r -= 1
         return l
+
+# Original Method from Xilin SUN
+# Don't forget to return 0 if A == [].
+
+#class Solution:
+    # @param    A       a list of integers
+    # @param    elem    an integer, value need to be removed
+    # @return an integer
+#    def removeElement(self, A, elem):
+#        if len(A) == 0:
+#    	    return 0
+#        else:
+#            k=0
+#            for i in range(0, len(A)):
+#                if A[i] != elem:
+#                    if i!= k:
+#                        A[k] = A[i]
+#                    k += 1
+#            return k
