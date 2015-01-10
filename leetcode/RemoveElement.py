@@ -20,6 +20,7 @@ class Solution:
             k=0
             for i in range(0, len(A)):
                 if A[i] != elem:
-                    A[k] = A[i]
+                    if i!= k:
+                        A[k] = A[i]
                     k += 1
             return k
