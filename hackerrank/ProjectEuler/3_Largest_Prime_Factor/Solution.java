@@ -6,11 +6,11 @@ import java.util.regex.*;
 
 public class Solution {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
-        for(int a0 = 0; a0 < t; a0++){
-            long n = in.nextLong();
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int t = in.nextInt();
+    for(int a0 = 0; a0 < t; a0++){
+      long n = in.nextLong();
 						List factors = new ArrayList();
 						long largest_prime_factor = 1;
 						for(long i = 2; i <= n; i++){

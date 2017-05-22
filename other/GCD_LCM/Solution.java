@@ -18,7 +18,7 @@ public class Solution {
 
 		while (b != 0) {
 			t = b;
-	    b = a % b;
+	  b = a % b;
 			a = t;
 		}
 

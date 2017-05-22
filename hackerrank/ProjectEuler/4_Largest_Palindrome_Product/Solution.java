@@ -5,9 +5,9 @@ import java.util.regex.*;
 
 public class Solution {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int t = in.nextInt();
 				List pals = new ArrayList();
 				for (int pal = 101101; pal < 1000000; pal++){
 
@@ -32,8 +32,8 @@ public class Solution {
 					}
 				}
 
-        for(int a0 = 0; a0 < t; a0++){
-            int n = in.nextInt();
+    for(int a0 = 0; a0 < t; a0++){
+      int n = in.nextInt();
 						int largest_pal = 101101;
 						for (int a1 = 0; a1 < pals.size(); a1++) {
 							if ((int)pals.get(a1) < n) {
@@ -41,7 +41,7 @@ public class Solution {
 							}
 						}
 						System.out.println(largest_pal);
-        }
     }
+  }
 }
 
