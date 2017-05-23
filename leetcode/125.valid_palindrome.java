@@ -1,5 +1,4 @@
-/* 1 Two Sum I
- * O(n^2) runtime, O(n) space - Brute force
+/* 125.valid_palindrome
  */
 
 public class Solution {
