@@ -3,33 +3,36 @@
 
 public class Solution {
   public boolean isNumber (String s) {
-    boolean has_digit = false;
-    boolean has_dot = false;
-    boolean is_exponential = false;
-    s = s.trim();
-    if (s.length() == 0) return false;
+    boolean is_number = false;
     int i = 0, n = s.length();
-    if (s.charAt(i) == '+' || s.charAt(i) == '-') {
+    while (i < n && Character.isWhitespace(s.charAt(i))) i++;
+    // filter leading whitespaces
+    if (i < n && (s.charAt(i) == '+' || s.charAt(i) == '-')) i++;
+    // filter sign
+    while (i < n && Character.isDigit(s.charAt(i))) {
       i++;
+      is_number = true;
     }
-    while (i < n) {
-      if (Character.isDigit(s.charAt(i))) {
-        has_digit = true;
-      }
-      else if (s.charAt(i) == '.' && has_dot == false) {
-        has_dot = true;
-      }
-      else if (s.charAt(i) == 'e' && is_exponential == false) {
-        is_exponential = true;
+    if (i < n && s.charAt(i) == '.') {
+      // the decimal point
+      i++;
+      while (i < n && Character.isDigit(s.charAt(i))) { 
+        // every digit following the decimal point
         i++;
-        if (i < n &&)
+        is_number = true;
       }
-      else {
-        return false;
-      }
-      i++;
     }
-    if (has_digit == false) return false;
-    return true;
+    if (is_number && i < n && s.charAt(i) == 'e') {
+      // the exponential 
+      i++;
+      is_number = false;
+      if (i < n && (s.charAt(i) == '+' || s.charAt(i) == '-')) i++;
+      while (i < n && Character.isDigit(s.charAt(i))) {
+        i++;
+        is_number = true;
+      }
+    }
+    while (i < n && Character.isWhitespace(s.charAt(i))) i++;
+    return is_number && i == n;
   }
 }
