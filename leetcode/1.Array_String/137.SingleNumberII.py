@@ -15,4 +15,21 @@ class Solution(object):
 
         return (3*sum(set(nums)) - sum(nums)) / 2
 
+class Solution2(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        """
+        for every bit, "one" counts if it appears 3 * k + 1 times, and "two" counts if it appears 3 * k + 2 times.
+        for every number that appears 3 times, every bit of it will appear 3 times, so the corresponding bit
+        in "one" and "two" are both 0.
 
+        for each bit b in the current number, if b is 0, then "one" and "two" do not change.
+        if b is not 0, then rotate among these states of (one, two): (0, 0) --> (1, 0) --> (0, 1) --> (0, 0)
+        """
+        one, two = 0, 0
+        for number in nums:
+            one, two = (~number & one) | (number & ~one & ~two), (~number & two) | (number & one)
+        return one
