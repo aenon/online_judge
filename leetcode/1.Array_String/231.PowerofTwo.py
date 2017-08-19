@@ -17,3 +17,19 @@ class Solution(object):
         if n == 1:
             return True
         return s[3:].count('1') == 0
+
+    def isPowerOfTwo2(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        # if n is power of 2, then n - 1 is '1111...1'
+        return n > 0 and (n & n - 1) == 0    
+
+    def isPowerOfTwo3(self, n):
+        """
+        samee as solution 2
+        :type n: int
+        :rtype: bool
+        """
+        return n > 0 and (n & ~-n) == 0   
