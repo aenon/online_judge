@@ -26,5 +26,6 @@ class Solution(object):
         #wmd_val = sorted(nums)[len(nums)/2]
         from numpy import median
         md_val = median(nums)
-        return sum(map(lambda x: abs(x - md_val), nums))
+        #return sum(map(lambda x: abs(x - md_val), nums))
+        return sum(abs(num - md_val) for num in nums)
 
