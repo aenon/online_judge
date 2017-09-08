@@ -1,6 +1,7 @@
 /* 8. String to Integer (atoi)
  */
 
+
 public class Solution {
   private static final int max_div_10 = Integer.MAX_VALUE / 10;
   public int myAtoi(String str) {
@@ -11,7 +12,7 @@ public class Solution {
     int sign = 1;
     if (i < n && str.charAt(i) == '+') {
       i++;
-    } 
+    }
     else if (i < n && str.charAt(i) == '-') {
       sign = -1;
       i++;
