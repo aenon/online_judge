@@ -1,0 +1,3 @@
+export default HelloWorld = () => {
+  const hello = () => "Hello, World!"
+}
